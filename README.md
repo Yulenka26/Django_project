@@ -2,3 +2,14 @@
     - uv
     - pre-commit
     - в Makefile добавлена команда по запуску pre-commit
+
+Сделано:
+1. Добавлено поле `views_count` в модель `Post`
+2. Реализован метод увеличения просмотров в модели `Post`:  def increase_views_count(self)
+3. Добавлен метод строкового отображения объекта:
+    - для `Category` — возвращать `title`;
+    - для `Post` — возвращать `title`.
+4. Добавлена связь между моделями `Post` и `Category` через `ForeignKey`;
+5. В  `Makefile` добавлено:
+    - команда для `makemigrations` и `migrate`;
+    - команда создания суперпользователя;
