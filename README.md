@@ -1,8 +1,3 @@
-Настроен проект:
-    - uv
-    - pre-commit
-    - в Makefile добавлена команда по запуску pre-commit
-
 Сделано:
 1. Добавлено поле `views_count` в модель `Post`
 2. Реализован метод увеличения просмотров в модели `Post`:  def increase_views_count(self)
@@ -13,3 +8,4 @@
 5. В  `Makefile` добавлено:
     - команда для `makemigrations` и `migrate`;
     - команда создания суперпользователя;
+
