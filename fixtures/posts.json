@@ -1,0 +1,32 @@
+[
+{
+  "model": "blog_app.post",
+  "pk": 3,
+  "fields": {
+    "title": "статья",
+    "slug": "statya",
+    "content": "статья",
+    "author": 1,
+    "published": false,
+    "created_at": "2025-12-27T07:09:10.615Z",
+    "updated_at": "2025-12-27T07:09:10.615Z",
+    "views_count": 0,
+    "category": 1
+  }
+},
+{
+  "model": "blog_app.post",
+  "pk": 4,
+  "fields": {
+    "title": "stat",
+    "slug": "stat",
+    "content": "stat",
+    "author": 1,
+    "published": false,
+    "created_at": "2025-12-27T07:09:25.815Z",
+    "updated_at": "2025-12-27T07:09:25.816Z",
+    "views_count": 0,
+    "category": 1
+  }
+}
+]
