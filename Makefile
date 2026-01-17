@@ -4,7 +4,7 @@ run:
 lint:
 	uv run pre-commit run --all
 
-create:
+create_migrations:
 	uv run src/project/manage.py makemigrations
 
 migrate:
