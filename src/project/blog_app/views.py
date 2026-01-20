@@ -8,10 +8,14 @@ def index(request):
 
 def post_list(request):
     posts = Post.objects.filter(published=True)
-    response_content = "<h1>Список статей</h1> <ul>"
-    for post in posts:
-        response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a>{post.created_at}</li>"
-    response_content += "</ul>"
+    response_content = "<h1>Список статей</h1>"
+    if not posts:
+        response_content += "<p>Статей нет</p>"
+    else:
+        response_content += "<ul>"
+        for post in posts:
+            response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a>{post.created_at}</li>"
+        response_content += "</ul>"
     return HttpResponse(response_content)
 
 def post_detail(request, slug):
@@ -36,14 +40,18 @@ def categories_list(request):
 def category_detail(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
     posts = Post.objects.filter(category=category, published=True)
-    response_content = f"<h1>{category.title}</h1> <ul>"
-    for post in posts:
-        response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a></li>"
-    response_content += """
-    </ul>
-    <p>
-        <a href="/post_list/">Назад к списку статей</a><br>
-        <a href="/categories/">Назад к списку категорий</a>
-    </p>
-    """
+    response_content = f"<h1>{category.title}</h1>"
+    if not posts:
+        response_content += "<p>Статей нет</p>"
+    else:
+        response_content += "<ul>"
+        for post in posts:
+            response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a></li>"
+        response_content += """
+        </ul>
+        <p>
+            <a href="/post_list/">Назад к списку статей</a><br>
+            <a href="/categories/">Назад к списку категорий</a>
+        </p>
+        """
     return HttpResponse(response_content)
