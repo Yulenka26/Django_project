@@ -1,10 +1,15 @@
 from django.http import HttpResponse
 from project.blog_app.models import Post, Category
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
 
 def index(request):
-    return HttpResponse("<h1>Hello Blog!</h1>")
+    posts = Post.objects.filter(published=True).order_by("-created_at")[:5]
+
+    context = {
+        "posts": posts
+    }
+    return render(request, 'blog_app/index.html', context=context)
 
 def post_list(request):
     posts = Post.objects.filter(published=True)
@@ -16,14 +21,10 @@ def post_list(request):
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
-    content = f'''
-    <h1>{post.title}</h1>
-    <p>Автор: {post.author.username}</p>
-    <div>Содержание: {post.content}</div>
-    <hr>
-    <a href="/post_list/">Назад к списку статей</a>
-    '''
-    return HttpResponse(content)
+    context = {
+        "post": post
+    }
+    return render(request, 'blog_app/post_detail.html', context=context)
 
 def categories_list(request):
     categories = Category.objects.all()
