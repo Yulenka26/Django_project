@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from project.blog_app.models import Post, Category
 from django.shortcuts import get_object_or_404, render
 
@@ -12,15 +11,16 @@ def index(request):
     return render(request, 'blog_app/index.html', context=context)
 
 def post_list(request):
-    posts = Post.objects.filter(published=True)
-    response_content = "<h1>Список статей</h1> <ul>"
-    for post in posts:
-        response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a>{post.created_at}</li>"
-    response_content += "</ul>"
-    return HttpResponse(response_content)
+    posts = Post.objects.filter(published=True).order_by("-created_at")
+
+    context = {
+        "posts": posts
+    }
+    return render(request, 'blog_app/post_list.html', context=context)
 
 def post_detail(request, slug):
     post = get_object_or_404(Post, slug=slug)
+
     context = {
         "post": post
     }
@@ -28,23 +28,18 @@ def post_detail(request, slug):
 
 def categories_list(request):
     categories = Category.objects.all()
-    response_content = "<h1>Список категорий</h1> <ul>"
-    for category in categories:
-        response_content += f"<li><a href='/categories/{category.id}'>{category.title}</a></li>"
-    response_content += "</ul>"
-    return HttpResponse(response_content)
+
+    context = {
+        "categories": categories
+    }
+    return render(request, 'blog_app/categories_list.html', context=context)
 
 def category_detail(request, category_id):
     category = get_object_or_404(Category, pk=category_id)
-    posts = Post.objects.filter(category=category, published=True)
-    response_content = f"<h1>{category.title}</h1> <ul>"
-    for post in posts:
-        response_content += f"<li><a href='/post/{post.slug}'>{post.title}</a></li>"
-    response_content += """
-    </ul>
-    <p>
-        <a href="/post_list/">Назад к списку статей</a><br>
-        <a href="/categories/">Назад к списку категорий</a>
-    </p>
-    """
-    return HttpResponse(response_content)
+    posts = Post.objects.filter(category=category, published=True).order_by("-created_at")
+
+    context = {
+        "category": category,
+        "posts": posts
+    }
+    return render(request, 'blog_app/category_detail.html', context=context)
