@@ -10,4 +10,6 @@ urlpatterns = [
     path("categories/", views.categories_list, name='categories_list'),
     path("categories/<int:category_id>/", views.category_detail, name='category_detail'),
     path("create_post/", views.post_create, name='create_post'),
+    path("category/create/", views.category_create, name='create_category'),
+    path("post/<slug:slug>/edit/", views.edit_post, name='edit_post'),
 ]
