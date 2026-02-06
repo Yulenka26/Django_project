@@ -1,4 +1,5 @@
 from django import forms
+from .models import one_choice
 
 class FeedbackForm(forms.Form):
     name = forms.CharField(
@@ -18,6 +19,16 @@ class FeedbackForm(forms.Form):
             attrs={
                 "class": "form-control",
                 "placeholder": "Введите Ваш E-mail"
+            }
+        )
+    )
+
+    subject = forms.TypedChoiceField(
+        label="Тема обращения",
+        choices=one_choice,
+        widget=forms.Select(
+            attrs={
+                "class": "form-select"
             }
         )
     )
