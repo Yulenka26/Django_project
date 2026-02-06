@@ -23,6 +23,16 @@ class FeedbackForm(forms.Form):
         )
     )
 
+    subject = forms.TypedChoiceField(
+        label="Тема обращения",
+        choices=one_choice,
+        widget=forms.Select(
+            attrs={
+                "class": "form-select"
+            }
+        )
+    )
+
     message = forms.CharField(
         label="Ваше сообщение",
         widget=forms.Textarea(
@@ -30,16 +40,6 @@ class FeedbackForm(forms.Form):
                 "class": "form-control",
                 "placeholder": "Введите Ваше сообщение",
                 "rows": "5",
-            }
-        )
-    )
-
-    subject = forms.TypedChoiceField(
-        label="Тема обращения",
-        choices=one_choice,
-        widget=forms.Select(
-            attrs={
-                "class": "form-select"
             }
         )
     )
