@@ -6,25 +6,30 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
-        <h1 class="mb-4">Обратная связь</h1>
+        <div class="card">
+            <div class="card-body">
+                <h1 class="mb-4">Обратная связь</h1>
 
-        <form action="" method="post">
-            {% csrf_token %}
+                <form action="" method="post">
+                    {% csrf_token %}
 
-            {% for field in form %}
-                <div class="mb-3">
-                    <label class="form-label">{{ field.label }}</label>
-                    {{ field }}
-                    {% if field.errors %}
-                        <div class="text-danger">
-                            {{ field.errors }}
+                    {% for field in form %}
+                        <div class="mb-3">
+                            <label class="form-label">{{ field.label }}</label>
+                            {{ field }}
+                            {% if field.errors %}
+                             <div class="text-danger">
+                                    {{ field.errors }}
+                                </div>
+                            {% endif %}
                         </div>
-                    {% endif %}
-                </div>
-            {% endfor %}
+                    {% endfor %}
 
-            <button type="submit" class="btn btn-primary">Отправить</button>
-        </form>
+                    <button type="submit" class="btn btn-primary">Отправить</button>
+
+                </form>
+            </div>
+        </div>
     </div>
 </div>
 
