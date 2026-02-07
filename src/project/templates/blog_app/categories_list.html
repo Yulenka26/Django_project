@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">{{category.title}}</h5>
-                <a href="{% url "blog:category_detail" category.id %}" class="btn btn-info btn-sm">Перейти к статьям категории</a>
+                <a href="{{category.get_absolute_url}}" class="btn btn-info btn-sm">Перейти к статьям категории</a>
             </div>
         </div>
     </div>
