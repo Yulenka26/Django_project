@@ -1,40 +1,32 @@
-from project.blog_app.forms import PostForm, SearchForm, CategoryForm
+from django.views.generic import TemplateView, ListView, DetailView, CreateView
+
+from project.blog_app.forms import PostForm, CategoryForm
 from project.blog_app.models import Post, Category
 from django.shortcuts import get_object_or_404, render, redirect
 from slugify import slugify
 
+class IndexView(TemplateView):
+    template_name = "blog_app/index.html"
 
-def index(request):
-    posts = Post.objects.filter(published=True).order_by("-created_at")
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["posts"] = Post.objects.filter(published=True).order_by("-created_at")[:5]
+        return context
 
-    form = SearchForm(request.GET)
+class PostListView(ListView):
+    model = Post
+    template_name = "blog_app/post_list.html"
+    context_object_name = "posts"
+    paginate_by = 3
 
-    if form.is_valid():
-        query = form.cleaned_data["query"].strip()
-        if query:
-            posts = posts.filter(title__icontains=query)
+    def get_queryset(self):
+        return self.model.objects.filter(published=True)
 
-    context = {
-        "posts": posts,
-        "form": form
-    }
-    return render(request, 'blog_app/index.html', context=context)
 
-def post_list(request):
-    posts = Post.objects.filter(published=True).order_by("-created_at")
-
-    context = {
-        "posts": posts
-    }
-    return render(request, 'blog_app/post_list.html', context=context)
-
-def post_detail(request, slug):
-    post = get_object_or_404(Post, slug=slug)
-
-    context = {
-        "post": post
-    }
-    return render(request, 'blog_app/post_detail.html', context=context)
+class PostDetailView(DetailView):
+    model = Post
+    template_name = "blog_app/post_detail.html"
+    context_object_name = "post"
 
 def categories_list(request):
     categories = Category.objects.all()
@@ -74,22 +66,15 @@ def post_create(request):
     }
     return render(request, "blog_app/create_post.html", context=context)
 
-def category_create(request):
-    if request.method == "POST":
-        form = CategoryForm(request.POST)
+class CategoryCreateView(CreateView):
+    model = Category
+    form_class = CategoryForm
+    template_name = "blog_app/create_category.html"
 
-        if form.is_valid():
-            new_category = form.save(commit=False)
-            new_category.save()
+    def form_valid(self, form):
+        form.instance.slug = slugify(form.cleaned_data["title"])
+        return super().form_valid(form)
 
-            return redirect("blog:categories_list")
-    else:
-        form = CategoryForm()
-
-    context = {
-        "form": form
-    }
-    return render(request, "blog_app/create_post.html", context=context)
 
 def edit_post(request, slug):
     post = get_object_or_404(Post, slug=slug)
