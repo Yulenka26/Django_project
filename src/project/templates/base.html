@@ -22,14 +22,10 @@
         </ul>
 
         <!-- Кнопка поиска по статьям -->
-        <div class="me-5">
-            <form method="get" action="{% url 'blog:post_list' %}">
-                <div class="input-group mb-3" style="max-width: 400px;">
-                    {{ form.query }}
-                <button class="btn btn-secondary" type="submit">Найти</button>
-                </div>
-            </form>
-        </div>
+        <form class="d-flex" method="get" action="{% url 'blog:post_list' %}"> <!-- где ищем статьи blog:post_list -->
+            <input class="form-control me-2" name="text" type="search" placeholder="Поиск" aria-label="Поиск"> <!--сам запрос пользователя text -->
+            <button class="btn btn-outline-info" type="submit">Найти</button>
+        </form>
 
         <!-- Переключатель темы -->
         <ul class="navbar-nav">

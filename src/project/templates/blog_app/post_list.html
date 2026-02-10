@@ -20,15 +20,7 @@
     <p>Статей нет</p>
     {% endfor %}
 
-    {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
-    {% endif %}
-
-    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
-
-    {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
-    {% endif %}
+   {% include "includes/pagination.html" %}
 
 </div>
 {% endblock %}
