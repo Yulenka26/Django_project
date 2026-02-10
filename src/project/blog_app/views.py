@@ -20,12 +20,10 @@ class PostListView(ListView):
     paginate_by = 3
 
     def get_queryset(self):
-        queryset = self.model.objects.filter(published=True)
-
-        query = self.request.GET.get("text") # text берем из поиска, что ввел пользователь
-        if query:
-            queryset = queryset.filter(title__contains=query) # сравниваем запрос с названиями статей
-        return queryset
+        if query := self.request.GET.get("text"):
+            return self.model.objects.filter(title__contains=query)
+        else:
+            return self.model.objects.filter(published=True)
 
 
 class PostDetailView(DetailView):
