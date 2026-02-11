@@ -1,12 +1,14 @@
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 
 from project.blog_app.forms import PostForm, CategoryForm
+from project.blog_app.mixins import TitleMixin, StaffRequiredMixin
 from project.blog_app.models import Post, Category
 from django.shortcuts import get_object_or_404
 from slugify import slugify
 
-class IndexView(TemplateView):
+class IndexView(TitleMixin, TemplateView):
     template_name = "blog_app/index.html"
+    title = "Главная страница"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -55,14 +57,16 @@ class CategoryDetailView(DetailView):
         ).order_by("-created_at")
         return context
 
-class PostCreateView(CreateView):
+class PostCreateView(StaffRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = "blog_app/create_post.html"
 
     def form_valid(self, form):
         form.instance.slug = slugify(form.cleaned_data["title"])
+        form.instance.author = self.request.user
         return super().form_valid(form)
+
 
 
 class CategoryCreateView(CreateView):
