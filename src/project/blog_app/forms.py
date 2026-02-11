@@ -5,17 +5,12 @@ from project.blog_app.models import Post, Category
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["title", "content", "author", "published", "category"]
+        fields = ["title", "content", "published", "category"]
         widgets = {
             "title": forms.TextInput(
                 attrs={
                     "class": "form-control",
                     "placeholder": "Введите название статьи"
-                }
-                ),
-            "author": forms.Select(
-                attrs={
-                    "class": "form-select"
                 }
             ),
             "content": forms.Textarea(
@@ -58,6 +53,7 @@ class SearchForm(forms.Form):
         )
     )
 
+
 class CategoryForm(forms.ModelForm):
     class Meta:
         model = Category
@@ -68,8 +64,9 @@ class CategoryForm(forms.ModelForm):
                     "class": "form-control",
                     "placeholder": "Введите название категории"
                 }
-                )
+            )
         }
+
     def clean(self):
         cleaned_data = super().clean()
         title = cleaned_data.get("title")
