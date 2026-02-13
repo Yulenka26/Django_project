@@ -10,6 +10,7 @@ dependencies = [
     "pre-commit>=4.5.0",
     "python-slugify>=8.0.4",
     "slug>=2.0",
+    "users>=1.0.dev0",
 ]
 
 [project.scripts]
