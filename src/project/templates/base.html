@@ -20,15 +20,6 @@
                 <a href="{% url "blog:post_list" %}" class="nav-link">Статьи</a>
             </li>
         </ul>
-        {% if user.is_authenticated  %}
-        <form action="{% url "users:logout" %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-outline-info" type="submit">Выйти</button>
-        </form>
-        {% else %}
-        <a href="{% url "users:register" %}" class="nav-link">Зарегистрироваться</a>
-        <a href="{% url "users:login" %}" class="nav-link">Войти</a>
-        {% endif %}
 
         <!-- Кнопка поиска по статьям -->
         <form class="d-flex" method="get" action="{% url 'blog:post_list' %}"> <!-- где ищем статьи blog:post_list -->
@@ -49,6 +40,16 @@
             </li>
         </ul>
 
+        <!-- Вход/Выход/Регистрация -->
+        {% if user.is_authenticated  %}
+        <form action="{% url "users:logout" %}" method="post">
+        {% csrf_token %}
+        <button class="btn btn-outline-info" type="submit">Выйти</button>
+        </form>
+        {% else %}
+        <a href="{% url "users:register" %}" class="btn btn-outline-info me-2">Зарегистрироваться</a>
+        <a href="{% url "users:login" %}" class="btn btn-outline-info">Войти</a>
+        {% endif %}
     </div>
 </nav>
 

@@ -127,3 +127,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 LOGIN_REDIRECT_URL = "users:user_profile"
 LOGOUT_REDIRECT_URL = "blog:index"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
