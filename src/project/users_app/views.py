@@ -2,13 +2,13 @@ from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, DetailView, CreateView
 
-from project.users_app.forms import UsersForm, CustomLoginForm, CustomUserCreationForm
+from project.users_app.forms import ProfileForm, CustomLoginForm, CustomUserCreationForm
 from project.users_app.models import Profile
 
 
 class ProfileUpdateView(UpdateView):
     model = Profile
-    form_class = UsersForm
+    form_class = ProfileForm
     template_name = "users_app/user_page.html"
     success_url = reverse_lazy("users:user_profile")
 

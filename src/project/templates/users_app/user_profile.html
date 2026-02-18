@@ -5,7 +5,9 @@
 {% block content %}
 <article>
     <h1>{{profile.user}}</h1>
-
+    {% if profile.avatar %}
+    <img src="{{ profile.avatar.url }}" alt="Аватар {{profile.user}}" class="rounded-circle mb-3" height="150px" width="150px">
+    {% endif %}
     <div class="post-content">
         Биография: {{profile.bio|linebreaksbr}}
     </div>
@@ -13,6 +15,7 @@
     <p class="text-muted">
         Ссылка на внешний сайт: {{profile.social_link}}
     </p>
+    <a href="{% url "users:user_page" %}" class="btn btn-outline-info">Редактировать профиль</a>
 </article>
 
 {% endblock %}

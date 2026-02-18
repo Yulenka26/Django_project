@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 from project.users_app.models import Profile
 
 
-class UsersForm(forms.ModelForm):
+class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ["bio", "social_link"]
+        fields = ["bio", "social_link", "avatar"]
         widgets = {
             "bio": forms.Textarea(
                 attrs={
@@ -22,6 +22,11 @@ class UsersForm(forms.ModelForm):
                 attrs={
                     "class": "form-control",
                     "placeholder": "Ссылка на соцсети",
+                }
+            ),
+            "avatar": forms.ClearableFileInput(
+                attrs={
+                    "class": "form-control",
                 }
             ),
         }

@@ -13,14 +13,35 @@
     <div class="container">
         <img src="/media/logo1.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
         <a href="{% url "blog:index" %}" class="navbar-brand">Главная страница</a>
+        <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a href="{% url "blog:categories_list" %}" class="nav-link">Категории</a>
+            <li class="nav-item dropdown">
+                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" area-expanded="false">Категории</a>
+                <ul class="dropdown-menu" area-labelledby="navbarDropdown">
+                   <li>
+                       <a href="{% url "blog:categories_list" %}" class="dropdown-item">Все категории</a>
+                   </li>
+                    <li>
+                       <hr class="dropdown-divider">
+                   </li>
+                    {% for category in nav_categories %}
+                    <li>
+                        <a href="{% url "blog:category_detail" category.id %}" class="dropdown-item">{{category.title}}</a>
+                    </li>
+                    {% empty %}
+                    <li>
+                        <span class="dropdown-item-text text-muted">
+                            Нет категорий
+                        </span>
+                    </li>
+                    {% endfor %}
+                </ul>
             </li>
             <li class="nav-item">
                 <a href="{% url "blog:post_list" %}" class="nav-link">Статьи</a>
             </li>
         </ul>
+
 
         <!-- Кнопка поиска по статьям -->
         <form class="d-flex" method="get" action="{% url 'blog:post_list' %}"> <!-- где ищем статьи blog:post_list -->
@@ -51,6 +72,7 @@
         <a href="{% url "users:register" %}" class="btn btn-outline-info me-2">Зарегистрироваться</a>
         <a href="{% url "users:login" %}" class="btn btn-outline-info">Войти</a>
         {% endif %}
+    </div>
     </div>
 </nav>
 
