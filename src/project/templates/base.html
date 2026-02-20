@@ -6,73 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Django blog{% endblock %}</title>
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
     <div class="container">
-        <img src="/media/logo1.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+        <img src="/static/logo.svg" alt="" width="30" height="24" class="d-inline-block align-text-top">
         <a href="{% url "blog:index" %}" class="navbar-brand">Главная страница</a>
         <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" area-expanded="false">Категории</a>
-                <ul class="dropdown-menu" area-labelledby="navbarDropdown">
-                   <li>
-                       <a href="{% url "blog:categories_list" %}" class="dropdown-item">Все категории</a>
-                   </li>
-                    <li>
-                       <hr class="dropdown-divider">
-                   </li>
-                    {% for category in nav_categories %}
-                    <li>
-                        <a href="{% url "blog:category_detail" category.id %}" class="dropdown-item">{{category.title}}</a>
-                    </li>
-                    {% empty %}
-                    <li>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                       data-bs-toggle="dropdown" area-expanded="false">Категории</a>
+                    <ul class="dropdown-menu" area-labelledby="navbarDropdown">
+                        <li>
+                            <a href="{% url "blog:categories_list" %}" class="dropdown-item">Все категории</a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        {% for category in nav_categories %}
+                            <li>
+                                <a href="{% url "blog:category_detail" category.id %}"
+                                   class="dropdown-item">{{ category.title }}</a>
+                            </li>
+                            {% empty %}
+                            <li>
                         <span class="dropdown-item-text text-muted">
                             Нет категорий
                         </span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </li>
-            <li class="nav-item">
-                <a href="{% url "blog:post_list" %}" class="nav-link">Статьи</a>
-            </li>
-        </ul>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url "blog:post_list" %}" class="nav-link">Статьи</a>
+                </li>
+            </ul>
 
+            <div class="d-flex align-items-center">
 
-        <!-- Кнопка поиска по статьям -->
-        <form class="d-flex" method="get" action="{% url 'blog:post_list' %}"> <!-- где ищем статьи blog:post_list -->
-            <input class="form-control me-2" name="text" type="search" placeholder="Поиск" aria-label="Поиск"> <!--сам запрос пользователя text -->
-            <button class="btn btn-outline-info" type="submit">Найти</button>
-        </form>
+                <!-- Кнопка поиска по статьям -->
+                <form class="d-flex me-3" method="get" action="{% url 'blog:post_list' %}">
+                    <input class="form-control me-2" name="text" type="search" placeholder="Поиск" aria-label="Поиск">
+                    <button class="btn btn-outline-info" type="submit">🔍</button>
+                </form>
 
-        <!-- Переключатель темы -->
-        <ul class="navbar-nav">
-            <li class="nav-item mt-2 mx-2 text-white">
-                <div class="d-flex align-items-center">
-                    <span class="me-3">Светлая тема</span>
+                <!-- Переключатель темы -->
+                <div class="d-flex align-items-center text-white me-3">
+                    <span class="me-2">☀️</span>
                     <div class="form-check form-switch m-0">
-                        <input class="form-check-input" type="checkbox" role="switch" id="theme-switch">
+                        <input class="form-check-input" type="checkbox" role="switch" id="theme-switch"
+                               style="cursor: pointer;">
                     </div>
-                    <span class="ms-3">Тёмная тема</span>
-                </div>
-            </li>
-        </ul>
+                    <span class="ms-2">🌙</span></div>
 
-        <!-- Вход/Выход/Регистрация -->
-        {% if user.is_authenticated  %}
-        <form action="{% url "users:logout" %}" method="post">
-        {% csrf_token %}
-        <button class="btn btn-outline-info" type="submit">Выйти</button>
-        </form>
-        {% else %}
-        <a href="{% url "users:register" %}" class="btn btn-outline-info me-2">Зарегистрироваться</a>
-        <a href="{% url "users:login" %}" class="btn btn-outline-info">Войти</a>
-        {% endif %}
-    </div>
+                <!-- Вход/Выход/Регистрация -->
+                {% if user.is_authenticated %}
+                    <div class="d-flex align-items-center gap-2">
+                    <form action="{% url "users:logout" %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button class="btn btn-outline-info" type="submit">Выйти</button>
+                    </form>
+                        {% if user.profile.avatar %}
+                            <a href="{% url "users:user_profile" %}">
+                            <img src="{{ user.profile.avatar.url }}" alt="{{profile.user}}" class="rounded-circle mb-3" height="40px" width="40px">
+                            </a>
+                        {% else %}
+                            <a href="{% url "users:user_profile" %}" class="avatar-placeholder mb-3" height="40px" width="40px">
+                                {{ user.username|slice:":1"|upper }}
+                            </a>
+                        {% endif %}
+                    </div>
+                {% else %}
+                    <div class="btn-group">
+                        <a href="{% url "users:login" %}" class="btn btn-outline-info me-2">Войти</a>
+                        <a href="{% url "users:register" %}" class="btn btn-outline-info">Регистрация</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
     </div>
 </nav>
 
@@ -81,7 +95,11 @@
 </div>
 
 <footer class="py-3 my-4">
-    <p class="text-center text-muted">Учебный Django-проект</p>
+    <p class="text-center text-muted">
+        Учебный Django-проект<br>
+        Всего опубликованных статей: {{ nav_post_count }}<br>
+        Всего пользователей на сайте: {{ nav_user_count }}
+    </p>
 </footer>
 
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>

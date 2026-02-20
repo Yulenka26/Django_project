@@ -11,6 +11,11 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">{{post.title}}</h5>
+                {% if post.image %}
+                    <a href="{% url "blog:post_detail" post.slug%}">
+                    <img src="{{ post.image.url }}" alt="Обложка {{post.title}}" class="mb-3" height="150px" width="150px">
+                    </a>
+                {% endif %}
                 <h6 class="card-subtitle mb-2 text-muted">{{post.created_at|date:"d.m.Y"}} | {{post.category.title}}</h6>
                 <p class="card-text">{{post.content|truncatewords:30}}</p>
                 <a href="{% url "blog:post_detail" post.slug %}" class="btn btn-primary btn-sm">Читать статью</a>
