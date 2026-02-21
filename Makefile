@@ -14,16 +14,28 @@ admin:
 	uv run src/project/manage.py createsuperuser
 
 print:
-	python manage.py print_post
+	uv run src/project/manage.py print_post
 
 publish:
-	python manage.py print_published_posts
+	uv run src/project/manage.py print_published_posts
 
 create:
-	python manage.py create_post
+	uv run src/project/manage.py create_post
 
 delete:
-	python manage.py delete_post
+	uv run src/project/manage.py delete_post
 
 update:
-	python manage.py update_post
+	uv run src/project/manage.py update_post
+
+test_blog_app:
+	uv run src/project/manage.py test blog_app
+
+test_feedback_app:
+	uv run src/project/manage.py test feedback_app
+
+test:
+	uv run src/project/manage.py test
+
+test_verbose:
+	uv run src/project/manage.py test -v 2
