@@ -5,7 +5,7 @@ from project.blog_app.models import Post, Category
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ["title", "content", "published", "category"]
+        fields = ["title", "content", "published", "category", "image"]
         widgets = {
             "title": forms.TextInput(
                 attrs={
@@ -28,6 +28,11 @@ class PostForm(forms.ModelForm):
             "published": forms.CheckboxInput(
                 attrs={
                     "class": "form-check-input"
+                }
+            ),
+            "image": forms.ClearableFileInput(
+                attrs={
+                    "class": "form-control",
                 }
             ),
         }
