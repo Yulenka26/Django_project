@@ -6,6 +6,7 @@ from PIL import Image
 class Category(models.Model):
     title = models.CharField(max_length=100, verbose_name="Название категории")
     slug = models.SlugField(unique=True)
+    objects = models.Manager()
 
     class Meta:
         verbose_name = "Категория"
@@ -35,6 +36,7 @@ class Post(models.Model):
         verbose_name="Категория"
     )
     image = models.ImageField(upload_to="posts/", blank=True, null=True, verbose_name="Обложка")
+    objects = models.Manager()
 
     class Meta:
         verbose_name = "Статья"

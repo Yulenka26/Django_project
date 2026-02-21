@@ -1,3 +1,4 @@
+from django.urls import reverse
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 
 from project.blog_app.forms import PostForm, CategoryForm
@@ -62,6 +63,9 @@ class PostCreateView(StaffRequiredMixin, CreateView):
     form_class = PostForm
     template_name = "blog_app/create_post.html"
 
+    def get_success_url(self):
+        return reverse("blog:post_detail", args=[self.object.slug])
+
     def form_valid(self, form):
         form.instance.slug = slugify(form.cleaned_data["title"])
         form.instance.author = self.request.user
@@ -69,7 +73,7 @@ class PostCreateView(StaffRequiredMixin, CreateView):
 
 
 
-class CategoryCreateView(CreateView):
+class CategoryCreateView(StaffRequiredMixin, CreateView):
     model = Category
     form_class = CategoryForm
     template_name = "blog_app/create_category.html"
