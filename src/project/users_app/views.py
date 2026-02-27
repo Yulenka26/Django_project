@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.views import LoginView
 from django.urls import reverse_lazy
 from django.views.generic import UpdateView, DetailView, CreateView
@@ -6,15 +7,18 @@ from project.users_app.forms import ProfileForm, CustomLoginForm, CustomUserCrea
 from project.users_app.models import Profile
 
 
-class ProfileUpdateView(UpdateView):
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
     model = Profile
     form_class = ProfileForm
     template_name = "users_app/user_page.html"
     success_url = reverse_lazy("users:user_profile")
+    login_url = "users:login"
+
 
     # Показываем профиль пользователя
     def get_object(self):
         return self.request.user.profile
+
 
 class ProfileDetailView(DetailView):
     model = Profile
