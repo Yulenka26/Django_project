@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from project.blog_app.models import Post, Category
-from project.feedback_app.models import one_choice
+from project.feedback_app.models import one_choice, Feedback
 
 
 class PostSerializer(serializers.ModelSerializer):
@@ -19,3 +19,6 @@ class FeedbackSerializer(serializers.Serializer):
     email = serializers.EmailField()
     subject = serializers.ChoiceField(choices=one_choice)
     message = serializers.CharField()
+
+    def create(self, validated_data):
+        return Feedback.objects.create(**validated_data)

@@ -2,7 +2,6 @@ from rest_framework import generics
 
 from project.blog_app.models import Post, Category
 from project.drf_api.serializers import PostSerializer, CategorySerializer, FeedbackSerializer
-from project.feedback_app.models import Feedback
 
 
 class PostListCreateAPIView(generics.ListCreateAPIView):
@@ -22,5 +21,4 @@ class CategoryRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView
     serializer_class = CategorySerializer
 
 class FeedbackCreateAPIView(generics.CreateAPIView):
-    queryset = Feedback.objects.all()
     serializer_class = FeedbackSerializer
