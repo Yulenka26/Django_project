@@ -2,9 +2,10 @@ from django.http import HttpResponse
 from ninja import NinjaAPI
 from slugify import slugify
 
-from project.blog_app.models import Post
+from project.blog_app.models import Post, Category
 from project.feedback_app.models import Feedback
-from project.ninja_api.schemas import PostOutSchema, PostInSchema, FeedbackOutSchema, FeedbackInSchema
+from project.ninja_api.schemas import PostOutSchema, PostInSchema, FeedbackOutSchema, FeedbackInSchema, \
+    CategoryOutSchema, CategoryInSchema
 
 router = NinjaAPI(
     version='1.0.0',
@@ -42,3 +43,32 @@ async def create_post(request, payload: PostInSchema) -> PostOutSchema:
 @router.post("/feedback", response=FeedbackOutSchema)
 async def create_feedback(request, payload: FeedbackInSchema) -> FeedbackOutSchema:
     return await Feedback.objects.acreate(**payload.model_dump())
+
+@router.get("/categories", response=list[CategoryOutSchema])
+async def categories_list(request, search_title: str | None=None) -> list[CategoryOutSchema]:
+    qs = Category.objects.all()
+    if search_title:
+        qs = qs.filter(title__icontains=search_title)
+
+    return [category async for category in qs]
+
+@router.get("/categories/{category_id}", response=CategoryOutSchema)
+async def get_category(request, category_id:int) -> CategoryOutSchema | HttpResponse:
+    try:
+        category = await Category.objects.aget(pk=category_id)
+        return category
+    except Category.DoesNotExist:
+        return router.create_response(request, {"detail":"Категория не найдена"}, status=404)
+
+@router.post("/categories", response=CategoryOutSchema)
+async def create_category(request, payload: CategoryInSchema) -> CategoryOutSchema:
+    return await Category.objects.acreate(**payload.model_dump(), slug=slugify(payload.title))
+
+@router.delete("/categories/{category_id}")
+async def delete_category(request, category_id:int) -> HttpResponse:
+    try:
+        category = await Category.objects.aget(pk=category_id)
+        category.adelete()
+        return router.create_response(request, {"detail":"Категория удалена"}, status=200)
+    except Category.DoesNotExist:
+        return router.create_response(request, {"detail":"Категория не найдена"}, status=404)
