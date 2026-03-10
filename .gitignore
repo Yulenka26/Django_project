@@ -10,3 +10,4 @@ Virtual environments
 .venv
 .vscode
 .idea
+.env
