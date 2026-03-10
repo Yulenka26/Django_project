@@ -1,0 +1,1699 @@
+[
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$XmqU4xWHOtPljG0VyHUfDi$yl6hC0qdUTEtLnyRXRCpkW1OrrvMMg9q61feSbgzZW0=",
+        "last_login": "2026-02-28T19:23:33.017Z",
+        "is_superuser": true,
+        "username": "Yuliya",
+        "first_name": "",
+        "last_name": "",
+        "email": "parfenovais@lad24.ru",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-12-20T07:32:37Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Юлия",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-01-10T09:14:07.522Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$Fo5yvYkbUg0IfcuHzCexit$MQiLQ+Urxirj/h1isb6gsSflmZVKut7fmiI0bvncX5A=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "Valera",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-02-11T17:32:28Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$bweX0ugUb4xKOVvWTEAwfX$6wIHDwSF3yFwKO7fUsxHF3nj5XeM43QjZegArSjAPD0=",
+        "last_login": "2026-02-28T19:19:59.617Z",
+        "is_superuser": false,
+        "username": "user_1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-02-11T17:33:56Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$pR07jIBwz1y4jjq2ozyQ6S$dFybe86o227ALBZC3bFXjZKA0FNZ3nE9ico+6Fpaj8I=",
+        "last_login": "2026-02-14T08:03:49.937Z",
+        "is_superuser": false,
+        "username": "юля",
+        "first_name": "",
+        "last_name": "",
+        "email": "mail@mail.ru",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-02-14T06:57:05.826Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$Ks2gdlR503rjmSX57kDBBO$RvOK9x0yeBHOAv/ot2i+dz6grx5x+LHVzuQL85H+6Fc=",
+        "last_login": "2026-02-14T08:13:42.911Z",
+        "is_superuser": false,
+        "username": "Пользователь1",
+        "first_name": "",
+        "last_name": "",
+        "email": "mail1@mail.ru",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-02-14T08:10:57.277Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$0OrmjurkRw97I77g2qnCBJ$mKI9yk7CWG/4ksdtBRb1Np+f6s/5AySBUKLOe8U7Koo=",
+        "last_login": "2026-02-14T08:18:21.892Z",
+        "is_superuser": true,
+        "username": "1",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-02-14T08:17:39.363Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$6aXMtuofrsVsBLCEsmE0Q4$jw9Yj+VJlrvDX/aGhLpg0yCOOTO+z2LXYyrbbC4BH2c=",
+        "last_login": "2026-02-16T16:36:23.194Z",
+        "is_superuser": true,
+        "username": "Yuliya1",
+        "first_name": "",
+        "last_name": "",
+        "email": "mail@bk.ru",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2026-02-16T16:35:32.735Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$1200000$zI6oVBq2b1m5iCT5FrMoMY$ft34DcRDQsRJ3xRXcF+jNRmjCu3ZfA8A8hf+V/wXGrU=",
+        "last_login": null,
+        "is_superuser": false,
+        "username": "123",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2026-02-18T18:01:06.314Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "ddr58j3cwm420m9eybw79qx971rt6azv",
+    "fields": {
+        "session_data": ".eJxVjMsOwiAQAP9lz4aUUly2R-_9BrIsIFUDSR8n47-bJj3odWYyb_C8b8Xva1r8HGEEC5dfFlieqR4iPrjem5JWt2UO6kjUaVc1tZhet7P9GxReC4yQSRJifxXOxJSMBMZo9YDGkVjTIaPGEDQ5m7WLnUifjc4DkQsOOw2fL_ZMN8E:1vrAeC:k0xB_-wzBdEgfm_Au0QJb7GdLUSMmZySf2_42l56KgU",
+        "expire_date": "2026-02-28T08:05:00.067Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "duurzr6vf4yxqbeyj4b2u6ji511ip3fd",
+    "fields": {
+        "session_data": ".eJxVjMsKwyAQAP9lz0WMLzTH3vsNsutqTVsUYnIq_fcSyKG9zgzzhoj7VuM-8hoXhhkmuPwywvTM7RD8wHbvIvW2rQuJIxGnHeLWOb-uZ_s3qDgqzECcGH1xxmjOxqK2MnvlvJSkVcBgbJLBUPYyoStTQcJgfSFtUCrLBT5f8n04Vg:1vdWKx:4I-Cp6xVafh6Gqz2wKMwc55c_4fBfRAaVeOnw_M3orQ",
+        "expire_date": "2026-01-21T16:24:43.802Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "i6ocvljm0lnynwbou47dkf0wd5wen65w",
+    "fields": {
+        "session_data": ".eJxVjMsKwyAQAP9lz0WMLzTH3vsNsutqTVsUYnIq_fcSyKG9zgzzhoj7VuM-8hoXhhkmuPwywvTM7RD8wHbvIvW2rQuJIxGnHeLWOb-uZ_s3qDgqzECcGH1xxmjOxqK2MnvlvJSkVcBgbJLBUPYyoStTQcJgfSFtUCrLBT5f8n04Vg:1vWra6:SEq_skbDcOg77kOprSldXTK8bzg6F_W79SF3KeHaD0k",
+        "expire_date": "2026-01-03T07:40:50.971Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "kmk5n0h14zmlq9wow1z4p25v7lms19tw",
+    "fields": {
+        "session_data": ".eJxVjEsOwiAUAO_y1obwkV-X7nsG8niAVA0kpV0Z726adKHbmcm8IeC-1bCPvIYlwQQCLr8sIj1zO0R6YLt3Rr1t6xLZkbDTDjb3lF-3s_0bVBwVJiAnMnI0VudopXbaJjJYREGjIpdGEreFqBSljE6crtl77gQRCSd9Ifh8AfRHOGA:1vwPuX:zyQbkcTKsIId2Lc_3b1dwYpM5zA0X3gUMtI9sQ5aJ4E",
+        "expire_date": "2026-03-14T19:23:33.024Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "pfwkftroei6svi8xjy2pndu3i5sru6ya",
+    "fields": {
+        "session_data": ".eJxVjMsKwyAQAP9lz0WMLzTH3vsNsutqTVsUYnIq_fcSyKG9zgzzhoj7VuM-8hoXhhkmuPwywvTM7RD8wHbvIvW2rQuJIxGnHeLWOb-uZ_s3qDgqzECcGH1xxmjOxqK2MnvlvJSkVcBgbJLBUPYyoStTQcJgfSFtUCrLBT5f8n04Vg:1vkSLm:S6UmZzdVlywdZRe5nTnyemjbnkU2Fb0vqF5SqHJmENA",
+        "expire_date": "2026-02-09T19:34:14.651Z"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "qfuyoeex4fv7gmroxoxctfxycdcrj8jw",
+    "fields": {
+        "session_data": ".eJxVjMsKwyAQAP9lz0WMLzTH3vsNsutqTVsUYnIq_fcSyKG9zgzzhoj7VuM-8hoXhhkmuPwywvTM7RD8wHbvIvW2rQuJIxGnHeLWOb-uZ_s3qDgqzECcGH1xxmjOxqK2MnvlvJSkVcBgbJLBUPYyoStTQcJgfSFtUCrLBT5f8n04Vg:1vrAXr:z7fk9ucpevC7SPC2tEAJTD4f4HL4hwZR6kUTsSN2vw4",
+        "expire_date": "2026-02-28T07:58:27.828Z"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 1,
+    "fields": {
+        "title": "Категория-1",
+        "slug": "category"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 2,
+    "fields": {
+        "title": "измененная категория",
+        "slug": "kat"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 3,
+    "fields": {
+        "title": "Категория-3",
+        "slug": "django"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 4,
+    "fields": {
+        "title": "Обучение",
+        "slug": ""
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 5,
+    "fields": {
+        "title": "Категория-6",
+        "slug": "kategoriia-6"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 6,
+    "fields": {
+        "title": "новая категория",
+        "slug": "novaya-kategoriya"
+    }
+},
+{
+    "model": "blog_app.category",
+    "pk": 7,
+    "fields": {
+        "title": "новая категория1",
+        "slug": "novaya-kategoriya1"
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 6,
+    "fields": {
+        "title": "измененная статья",
+        "slug": "tipy-dannyh-v-python",
+        "content": "измененная статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:27:29.341Z",
+        "updated_at": "2026-02-28T19:07:41.348Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 8,
+    "fields": {
+        "title": "измененные циклы",
+        "slug": "cikly",
+        "content": "измененная статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:29:44.857Z",
+        "updated_at": "2026-02-28T19:21:05.341Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 9,
+    "fields": {
+        "title": "Строковый тип данных",
+        "slug": "strokovyj-tip-dannyh",
+        "content": "Текстовые данные часто встречаются в программировании. Мы можем рассматривать любой текст как последовательность символов.",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:30:37.817Z",
+        "updated_at": "2026-01-20T17:04:43.509Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 10,
+    "fields": {
+        "title": "Списки",
+        "slug": "spiski",
+        "content": "Список в Python — это упорядоченная коллекция объектов, которая может содержать элементы разных типов. Элементы списка индексируются, начиная с 0.",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-01-07T16:31:25.483Z",
+        "updated_at": "2026-01-20T17:04:57.752Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 11,
+    "fields": {
+        "title": "Функции",
+        "slug": "funkcii",
+        "content": "Функции - это",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:31:57.752Z",
+        "updated_at": "2026-01-20T17:08:17.885Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 12,
+    "fields": {
+        "title": "Кортеж",
+        "slug": "kortezh",
+        "content": "Кортеж — это упорядоченная коллекция объектов.",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-01-07T16:32:24.066Z",
+        "updated_at": "2026-01-20T17:08:27.198Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 14,
+    "fields": {
+        "title": "Множества",
+        "slug": "mnozhestva",
+        "content": "Множества (sets) в программировании используются для хранения уникальных элементов в неупорядоченной коллекции.",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:33:23.159Z",
+        "updated_at": "2026-01-26T19:36:31.798Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 15,
+    "fields": {
+        "title": "Упаковка и распаковка",
+        "slug": "upakovka-i-raspakovka",
+        "content": "Распаковка представляет разложение коллекции (кортежа, списка и т.д.) на отдельные значения.",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-07T16:34:34.518Z",
+        "updated_at": "2026-01-26T19:36:39.070Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 16,
+    "fields": {
+        "title": "Статья тест1",
+        "slug": "statia-test1",
+        "content": "Тестовая статья123",
+        "author": [
+            "Юлия"
+        ],
+        "published": false,
+        "created_at": "2026-01-10T09:21:12.726Z",
+        "updated_at": "2026-01-10T09:21:12.726Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 17,
+    "fields": {
+        "title": "Статья тест2",
+        "slug": "statia-test2",
+        "content": "Тестовая статья123456",
+        "author": [
+            "Юлия"
+        ],
+        "published": false,
+        "created_at": "2026-01-10T10:03:42.829Z",
+        "updated_at": "2026-01-10T10:03:42.829Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 19,
+    "fields": {
+        "title": "Статья от 31.01",
+        "slug": "statia-ot-31-01",
+        "content": "статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-01-31T07:23:23.886Z",
+        "updated_at": "2026-01-31T07:23:23.886Z",
+        "views_count": 0,
+        "category": 3,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 21,
+    "fields": {
+        "title": "Статья новая",
+        "slug": "statia-novaia",
+        "content": "Статья новая",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-02-11T17:27:35.412Z",
+        "updated_at": "2026-02-11T17:27:35.412Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 22,
+    "fields": {
+        "title": "Новая статья",
+        "slug": "novaia-statia",
+        "content": "Новая статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-02-11T17:31:05.267Z",
+        "updated_at": "2026-02-11T17:31:05.268Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 23,
+    "fields": {
+        "title": "Еще одна статья",
+        "slug": "eshche-odna-statia",
+        "content": "Еще одна статья",
+        "author": [
+            "user_1"
+        ],
+        "published": true,
+        "created_at": "2026-02-11T17:35:17.693Z",
+        "updated_at": "2026-02-20T16:40:29.487Z",
+        "views_count": 0,
+        "category": 2,
+        "image": "posts/images.png"
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 24,
+    "fields": {
+        "title": "новая статья",
+        "slug": "novaya-statiya",
+        "content": "Контент",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-02-25T17:28:23.022Z",
+        "updated_at": "2026-02-28T07:44:52.460Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 25,
+    "fields": {
+        "title": "новая статья1",
+        "slug": "novaya-statiya1",
+        "content": "Контент",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-02-28T07:10:32.296Z",
+        "updated_at": "2026-02-28T07:44:45.988Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 26,
+    "fields": {
+        "title": "новая статья2",
+        "slug": "2",
+        "content": "Контент",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-02-28T08:04:03.262Z",
+        "updated_at": "2026-02-28T08:04:03.262Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 27,
+    "fields": {
+        "title": "новая статья2",
+        "slug": "novaia-statia2",
+        "content": "Контент",
+        "author": [
+            "Yuliya"
+        ],
+        "published": true,
+        "created_at": "2026-02-28T08:07:45.226Z",
+        "updated_at": "2026-02-28T08:07:45.226Z",
+        "views_count": 0,
+        "category": 2,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 28,
+    "fields": {
+        "title": "Статья от 4 марта",
+        "slug": "statia-ot-4-marta",
+        "content": "Статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-03-04T18:02:54.858Z",
+        "updated_at": "2026-03-04T18:02:54.858Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "blog_app.post",
+    "pk": 29,
+    "fields": {
+        "title": "Статья №1",
+        "slug": "statia-no1",
+        "content": "Статья",
+        "author": [
+            "Yuliya"
+        ],
+        "published": false,
+        "created_at": "2026-03-04T18:05:30.497Z",
+        "updated_at": "2026-03-04T18:05:30.497Z",
+        "views_count": 0,
+        "category": 1,
+        "image": ""
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 1,
+    "fields": {
+        "name": "Юлия",
+        "email": "sackj@mail.ru",
+        "message": "vkdjfblkj",
+        "created_at": "2026-02-04T17:39:03.559Z",
+        "subject": "Без темы"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 2,
+    "fields": {
+        "name": "123",
+        "email": "123@mail.ru",
+        "message": "123",
+        "created_at": "2026-02-06T17:07:46.223Z",
+        "subject": "article"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 3,
+    "fields": {
+        "name": "юля",
+        "email": "123@mail.ru",
+        "message": "123",
+        "created_at": "2026-02-06T17:14:08.286Z",
+        "subject": "improve"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 4,
+    "fields": {
+        "name": "юля",
+        "email": "123@mail.ru",
+        "message": "ndkmx",
+        "created_at": "2026-02-06T17:26:42.776Z",
+        "subject": "article"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 5,
+    "fields": {
+        "name": "новый отзыв",
+        "email": "1234@mail.ru",
+        "message": "отзыв",
+        "created_at": "2026-02-27T18:42:26.352Z",
+        "subject": "other"
+    }
+},
+{
+    "model": "feedback_app.feedback",
+    "pk": 6,
+    "fields": {
+        "name": "Валера",
+        "email": "user123@example.com",
+        "message": "Отзыв тестовый",
+        "created_at": "2026-03-04T18:22:02.650Z",
+        "subject": "improve"
+    }
+},
+{
+    "model": "users_app.profile",
+    "pk": 1,
+    "fields": {
+        "user": [
+            "Yuliya"
+        ],
+        "bio": "парам пам пам",
+        "social_link": "https://vk.com/europaplusnsk",
+        "avatar": ""
+    }
+},
+{
+    "model": "users_app.profile",
+    "pk": 2,
+    "fields": {
+        "user": [
+            "Пользователь1"
+        ],
+        "bio": "",
+        "social_link": "",
+        "avatar": ""
+    }
+},
+{
+    "model": "users_app.profile",
+    "pk": 3,
+    "fields": {
+        "user": [
+            "1"
+        ],
+        "bio": "",
+        "social_link": "",
+        "avatar": ""
+    }
+},
+{
+    "model": "users_app.profile",
+    "pk": 4,
+    "fields": {
+        "user": [
+            "123"
+        ],
+        "bio": "",
+        "social_link": "",
+        "avatar": ""
+    }
+},
+{
+    "model": "users_app.profile",
+    "pk": 5,
+    "fields": {
+        "user": [
+            "user_1"
+        ],
+        "bio": "",
+        "social_link": "",
+        "avatar": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+        "action_time": "2025-12-20T08:05:12.427Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Category object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+        "action_time": "2025-12-20T08:16:26.130Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Category object (2)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+        "action_time": "2025-12-20T08:31:54.456Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "Post object (1)",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+        "action_time": "2025-12-27T06:35:48.641Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "статья 2",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+        "action_time": "2025-12-27T06:59:07.185Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "1",
+        "object_repr": "newpost",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+        "action_time": "2025-12-27T06:59:07.185Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "2",
+        "object_repr": "статья 2",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+        "action_time": "2025-12-27T07:09:10.618Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "статья",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+        "action_time": "2025-12-27T07:09:25.819Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "4",
+        "object_repr": "stat",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+        "action_time": "2025-12-27T07:10:55.702Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "3",
+        "object_repr": "статья",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+        "action_time": "2025-12-27T07:10:55.702Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "4",
+        "object_repr": "stat",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+        "action_time": "2025-12-27T07:52:47.346Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "статья",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 12,
+    "fields": {
+        "action_time": "2026-01-07T16:27:29.345Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "6",
+        "object_repr": "Типы данных в Python",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 13,
+    "fields": {
+        "action_time": "2026-01-07T16:27:46.674Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "5",
+        "object_repr": "статья",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 14,
+    "fields": {
+        "action_time": "2026-01-07T16:29:00.069Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "7",
+        "object_repr": "Условный оператор",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 15,
+    "fields": {
+        "action_time": "2026-01-07T16:29:44.858Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "8",
+        "object_repr": "Циклы",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 16,
+    "fields": {
+        "action_time": "2026-01-07T16:30:37.822Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "9",
+        "object_repr": "Строковый тип данных",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 17,
+    "fields": {
+        "action_time": "2026-01-07T16:31:25.486Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "10",
+        "object_repr": "Списки",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 18,
+    "fields": {
+        "action_time": "2026-01-07T16:31:57.758Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "11",
+        "object_repr": "Функции",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 19,
+    "fields": {
+        "action_time": "2026-01-07T16:32:24.069Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "12",
+        "object_repr": "Кортеж",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 20,
+    "fields": {
+        "action_time": "2026-01-07T16:32:54.655Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "13",
+        "object_repr": "Словарь",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 21,
+    "fields": {
+        "action_time": "2026-01-07T16:33:23.161Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "14",
+        "object_repr": "Множества",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 22,
+    "fields": {
+        "action_time": "2026-01-07T16:34:34.520Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "15",
+        "object_repr": "Упаковка и распаковка",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 23,
+    "fields": {
+        "action_time": "2026-01-20T17:04:13.938Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "6",
+        "object_repr": "Типы данных в Python",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 24,
+    "fields": {
+        "action_time": "2026-01-20T17:04:29.241Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "8",
+        "object_repr": "Циклы",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 25,
+    "fields": {
+        "action_time": "2026-01-20T17:04:43.514Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "9",
+        "object_repr": "Строковый тип данных",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 26,
+    "fields": {
+        "action_time": "2026-01-20T17:04:57.761Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "10",
+        "object_repr": "Списки",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 27,
+    "fields": {
+        "action_time": "2026-01-20T17:05:29.861Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "11",
+        "object_repr": "Функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 28,
+    "fields": {
+        "action_time": "2026-01-20T17:08:17.887Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "11",
+        "object_repr": "Функции",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 29,
+    "fields": {
+        "action_time": "2026-01-20T17:08:27.200Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "12",
+        "object_repr": "Кортеж",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 30,
+    "fields": {
+        "action_time": "2026-01-20T17:08:36.537Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "13",
+        "object_repr": "Статья про словари",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 31,
+    "fields": {
+        "action_time": "2026-01-20T17:08:45.170Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "14",
+        "object_repr": "Множества",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 32,
+    "fields": {
+        "action_time": "2026-01-20T17:09:00.528Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "15",
+        "object_repr": "Упаковка и распаковка",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041a\\u043e\\u043d\\u0442\\u0435\\u043d\\u0442\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 33,
+    "fields": {
+        "action_time": "2026-01-26T19:34:46.590Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "1",
+        "object_repr": "Категория-1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 34,
+    "fields": {
+        "action_time": "2026-01-26T19:34:58.329Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "2",
+        "object_repr": "Категория-2",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 35,
+    "fields": {
+        "action_time": "2026-01-26T19:35:07.803Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "category"
+        ],
+        "object_id": "3",
+        "object_repr": "Категория-3",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041d\\u0430\\u0437\\u0432\\u0430\\u043d\\u0438\\u0435\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 36,
+    "fields": {
+        "action_time": "2026-01-26T19:36:22.928Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "6",
+        "object_repr": "Типы данных в Python",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\", \"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 37,
+    "fields": {
+        "action_time": "2026-01-26T19:36:31.800Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "14",
+        "object_repr": "Множества",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\", \"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 38,
+    "fields": {
+        "action_time": "2026-01-26T19:36:39.071Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "15",
+        "object_repr": "Упаковка и распаковка",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\", \"\\u041a\\u0430\\u0442\\u0435\\u0433\\u043e\\u0440\\u0438\\u044f\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 39,
+    "fields": {
+        "action_time": "2026-02-02T21:05:45.397Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "18",
+        "object_repr": "Статья от 31.01",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 40,
+    "fields": {
+        "action_time": "2026-02-02T21:08:53.788Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "8",
+        "object_repr": "Циклы",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 41,
+    "fields": {
+        "action_time": "2026-02-03T15:20:28.923Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "20",
+        "object_repr": "Циклы",
+        "action_flag": 3,
+        "change_message": ""
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 42,
+    "fields": {
+        "action_time": "2026-02-11T17:32:32.876Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "Valera",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 43,
+    "fields": {
+        "action_time": "2026-02-11T17:33:59.285Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "4",
+        "object_repr": "user_1",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 44,
+    "fields": {
+        "action_time": "2026-02-11T17:34:18.496Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "4",
+        "object_repr": "user_1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 45,
+    "fields": {
+        "action_time": "2026-02-11T17:39:50.337Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "3",
+        "object_repr": "Valera",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"Staff status\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 46,
+    "fields": {
+        "action_time": "2026-02-16T16:38:42.703Z",
+        "user": [
+            "Yuliya1"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "Yuliya",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"password\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 47,
+    "fields": {
+        "action_time": "2026-02-16T16:38:53.314Z",
+        "user": [
+            "Yuliya1"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "1",
+        "object_repr": "Yuliya",
+        "action_flag": 2,
+        "change_message": "[]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 48,
+    "fields": {
+        "action_time": "2026-02-18T16:45:34.149Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "users_app",
+            "profile"
+        ],
+        "object_id": "1",
+        "object_repr": "Yuliya",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 49,
+    "fields": {
+        "action_time": "2026-02-18T18:01:10.085Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "object_id": "9",
+        "object_repr": "123",
+        "action_flag": 1,
+        "change_message": "[{\"added\": {}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 50,
+    "fields": {
+        "action_time": "2026-02-19T19:59:30.989Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "users_app",
+            "profile"
+        ],
+        "object_id": "1",
+        "object_repr": "Yuliya",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u0410\\u0432\\u0430\\u0442\\u0430\\u0440\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 51,
+    "fields": {
+        "action_time": "2026-02-20T16:40:29.494Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "23",
+        "object_repr": "Еще одна статья",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u0431\\u043b\\u043e\\u0436\\u043a\\u0430\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 52,
+    "fields": {
+        "action_time": "2026-02-28T07:44:45.992Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "25",
+        "object_repr": "новая статья1",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
+    }
+},
+{
+    "model": "admin.logentry",
+    "pk": 53,
+    "fields": {
+        "action_time": "2026-02-28T07:44:52.463Z",
+        "user": [
+            "Yuliya"
+        ],
+        "content_type": [
+            "blog_app",
+            "post"
+        ],
+        "object_id": "24",
+        "object_repr": "новая статья",
+        "action_flag": 2,
+        "change_message": "[{\"changed\": {\"fields\": [\"\\u041e\\u043f\\u0443\\u0431\\u043b\\u0438\\u043a\\u043e\\u0432\\u0430\\u043d\\u043e\"]}}]"
+    }
+}
+]

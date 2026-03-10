@@ -38,3 +38,10 @@ class CategoryOutSchema(ModelSchema):
     class Meta:
         model = Category
         fields = ["id", "title", "slug"]
+
+class PostSearchOutSchema(Schema):
+    id: int
+    title: str
+    slug: str
+    headline: str
+    rank: float

@@ -1,3 +1,4 @@
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchHeadline, SearchRank
 from django.http import HttpResponse
 from ninja import NinjaAPI
 from slugify import slugify
@@ -5,7 +6,7 @@ from slugify import slugify
 from project.blog_app.models import Post, Category
 from project.feedback_app.models import Feedback
 from project.ninja_api.schemas import PostOutSchema, PostInSchema, FeedbackOutSchema, FeedbackInSchema, \
-    CategoryOutSchema, CategoryInSchema
+    CategoryOutSchema, CategoryInSchema, PostSearchOutSchema
 
 router = NinjaAPI(
     version='1.0.0',
@@ -72,3 +73,21 @@ async def delete_category(request, category_id:int) -> HttpResponse:
         return router.create_response(request, {"detail":"Категория удалена"}, status=200)
     except Category.DoesNotExist:
         return router.create_response(request, {"detail":"Категория не найдена"}, status=404)
+
+@router.get("/post/search", response=list[PostSearchOutSchema])
+async def search_posts(request, query: str) -> list[PostSearchOutSchema]:
+    vector = SearchVector("title", weight="A", config="russian") + SearchVector("content", weight="B", config="russian")
+    search_query = SearchQuery(query, config="russian")
+    headline = SearchHeadline("content", search_query, config="russian", max_words=15, min_words=5)
+    qs = Post.objects.annotate(rank=SearchRank(vector, search_query), headline=headline).filter(rank__gte=0.1).order_by("-rank")
+    results = [
+        PostSearchOutSchema(
+            id=post.id,
+            title=post.title,
+            slug=post.slug,
+            headline=post.headline,
+            rank=post.rank
+        )
+        async for post in qs
+    ]
+    return results
