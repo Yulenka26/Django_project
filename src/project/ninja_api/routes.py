@@ -75,16 +75,22 @@ async def delete_category(request, category_id:int) -> HttpResponse:
         return router.create_response(request, {"detail":"Категория не найдена"}, status=404)
 
 @router.get("/post/search", response=list[PostSearchOutSchema])
-async def search_posts(request, query: str) -> list[PostSearchOutSchema]:
-    vector = SearchVector("title", weight="A", config="russian") + SearchVector("content", weight="B", config="russian")
+async def search_posts(request, query: str, published_only: bool = True) -> list[PostSearchOutSchema]:
+    vector = SearchVector("title", weight="A", config="russian") + SearchVector("content", weight="B", config="russian") + SearchVector("category__title", weight="C", config="russian")
     search_query = SearchQuery(query, config="russian")
     headline = SearchHeadline("content", search_query, config="russian", max_words=15, min_words=5)
-    qs = Post.objects.annotate(rank=SearchRank(vector, search_query), headline=headline).filter(rank__gte=0.1).order_by("-rank")
+    qs = Post.objects.annotate(rank=SearchRank(vector, search_query), headline=headline).select_related("category")
+
+    if published_only:
+        qs = qs.filter(published=True)
+    qs = qs.filter(rank__gte=0.1).order_by("-rank")
+
     results = [
         PostSearchOutSchema(
             id=post.id,
             title=post.title,
             slug=post.slug,
+            category=post.category.title,
             headline=post.headline,
             rank=post.rank
         )
