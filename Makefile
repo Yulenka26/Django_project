@@ -63,3 +63,6 @@ remove_db_force:
 
 remove_storage:
 	docker volume rm blog_db_data
+
+start_db:
+	docker start blog_db
