@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import Literal
 
 from ninja import ModelSchema, Schema
-from pydantic import EmailStr
+from pydantic import EmailStr, Field, model_validator, ValidationError
 
 from project.blog_app.models import Post, Category
 
@@ -46,3 +46,37 @@ class PostSearchOutSchema(Schema):
     category: str
     headline: str
     rank: float
+
+class RegisterInSchema(Schema):
+    username: str = Field(min_length=3)
+    email: EmailStr
+    password: str
+    password_confirm:str
+
+    @model_validator(mode="after")
+    def password_match(self) -> "RegisterInSchema":
+        if self.password != self.password_confirm:
+            raise ValidationError("Пароли не совпадают")
+        return self
+
+class RegisterOutSchema(Schema):
+    message: str
+    username: str
+    email: EmailStr
+    id: int
+
+class ActivationOutSchema(Schema):
+    message: str
+    activated: bool
+
+class LoginInSchema(Schema):
+    username: str
+    password: str
+
+class LoginOutSchema(Schema):
+    message: str
+    success: bool
+    username: str | None = None
+    email: str | None = None
+    id: int | None = None
+    is_staff: bool | None = None
