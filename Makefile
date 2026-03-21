@@ -66,3 +66,20 @@ remove_storage:
 
 start_db:
 	docker start blog_db
+
+create_container:
+	docker run \
+	--name blog \
+	--network blog_net \
+	-p 8000:8000 \
+	--env-file .env \
+	-d blog_image
+
+create_image:
+	docker build -t blog_image .
+
+delete_container:
+	docker rm -f blog
+
+in_container:
+	docker exec -it blog bash
