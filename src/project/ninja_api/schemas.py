@@ -80,3 +80,17 @@ class LoginOutSchema(Schema):
     email: str | None = None
     id: int | None = None
     is_staff: bool | None = None
+
+class ResendActivationInSchema(Schema):
+    email: EmailStr
+
+class ResendActivationOutSchema(Schema):
+    message: str
+    success: bool
+    email: EmailStr
+    username: str
+
+class LoginResponseSchema(Schema):
+    success: bool
+    access_token: str | None = None
+    message: str | None = None

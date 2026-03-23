@@ -83,3 +83,11 @@ delete_container:
 
 in_container:
 	docker exec -it blog bash
+
+connecting_storage:
+	 docker run --name blog \
+	 --network blog_net \
+	 -p 8000:8000 \
+	 --env-file .env \
+	 -v ./src/project/media/:/app/src/project/media/ \
+	 -d blog_image
