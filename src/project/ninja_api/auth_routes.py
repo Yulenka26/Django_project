@@ -103,11 +103,10 @@ async def login(request, payload: LoginInSchema) -> LoginResponseSchema:
         password=payload.password
     )
 
-    token = create_access_token(user_id=user.id, username=user.username)
-
     if user is None:
         return LoginResponseSchema(success=False, message="Неверный логин или пароль")
 
+    token = create_access_token(user_id=user.id, username=user.username)
     return LoginOutSchema(success=True, access_token=token)
 
 @auth_router.post("/resend-activation", response=ResendActivationOutSchema)
