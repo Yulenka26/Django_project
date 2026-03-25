@@ -1,0 +1,51 @@
+services:
+  db:
+    image: postgres:17
+    container_name: blog_db
+    restart: unless-stopped
+    volumes:
+      - blog_db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    healthcheck:
+      test: ["CMD-SHELL", "sh -c 'pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}'"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+  django:
+    build: .
+    container_name: blog
+    command: make run_all
+    restart: unless-stopped
+    volumes:
+      - ./src/project/media/:/app/src/project/media/
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  redis:
+    image: redis:7-alpine
+    container_name: blog_redis
+    restart: unless-stopped
+    volumes:
+      - blog_redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 3
+
+volumes:
+  blog_db_data:
+  blog_redis_data:
