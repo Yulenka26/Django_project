@@ -50,7 +50,14 @@ restore:
 	uv run src/project/manage.py loaddata fixtures/datadump.json
 
 create_db:
-	docker run --name blog_db -e POSTGRES_USER=myuser -e POSTGRES_PASSWORD=mypassword -e POSTGRES_DB=mydb -p 5432:5432 -v blog_db_data:/var/lib/postgresql/data -d postgres:17
+	docker run \
+	--name blog_db \
+	-e POSTGRES_USER=myuser \
+	-e POSTGRES_PASSWORD=mypassword \
+	-e POSTGRES_DB=mydb \
+	-p 5432:5432 \
+	-v blog_db_data:/var/lib/postgresql/data \
+	-d postgres:17
 
 stop_db:
 	docker stop blog_db
@@ -91,3 +98,15 @@ connecting_storage:
 	 --env-file .env \
 	 -v ./src/project/media/:/app/src/project/media/ \
 	 -d blog_image
+
+run_all: migrate restore
+	uv run src/project/manage.py runserver 0.0.0.0:8000
+
+compose_start:
+	docker compose up -d
+
+compose_rebuild:
+	docker compose up -d --build
+
+compose_logs:
+	docker compose logs -f
