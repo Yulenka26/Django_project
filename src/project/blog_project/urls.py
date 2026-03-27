@@ -31,6 +31,7 @@ urlpatterns = [
     path("api/v1/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/v1/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/v2/", router.urls),
+    path("", include("health_app.urls")),
 ]
 
 if settings.DEBUG:
