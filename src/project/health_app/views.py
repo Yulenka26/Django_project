@@ -4,4 +4,4 @@ from django.views import View
 
 class HealthView(View):
     def get(self, request):
-        return JsonResponse({"status": "ok"})
+        return JsonResponse({"status": "200"}, status=200)
