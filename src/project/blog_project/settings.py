@@ -57,6 +57,7 @@ INSTALLED_APPS = [
     'users_app',
     'drf_api',
     'ninja_api',
+    'health_app',
 ]
 
 MIDDLEWARE = [

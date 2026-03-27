@@ -2,7 +2,7 @@ FROM ghcr.io/astral-sh/uv:python3.14-trixie-slim
 
 WORKDIR /app
 
-RUN apt update && apt install make
+RUN apt update && apt install -y make curl
 
 #ENV PYTHONBUFFERED=1 \
 #    PYTHONDONTWRITEBYTECODE=1
