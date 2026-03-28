@@ -1,4 +1,5 @@
 {% load static %}
+{% load cache %}
 <!doctype html>
 <html lang="ru">
 <head>
@@ -26,6 +27,8 @@
                         <li>
                             <hr class="dropdown-divider">
                         </li>
+                        {% cache 600 nav_categories%}
+
                         {% for category in nav_categories %}
                             <li>
                                 <a href="{% url "blog:category_detail" category.id %}"
@@ -38,6 +41,7 @@
                         </span>
                             </li>
                         {% endfor %}
+                        {% endcache %}
                     </ul>
                 </li>
                 <li class="nav-item">

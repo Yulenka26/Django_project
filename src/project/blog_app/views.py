@@ -1,4 +1,6 @@
 from django.urls import reverse
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
 
 from project.blog_app.forms import PostForm, CategoryForm
@@ -29,10 +31,15 @@ class PostListView(ListView):
             return self.model.objects.filter(published=True)
 
 
+
 class PostDetailView(DetailView):
     model = Post
     template_name = "blog_app/post_detail.html"
     context_object_name = "post"
+
+    @method_decorator(cache_page(60 * 5))
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)
 
 class CategoriesListView(ListView):
     model = Category
