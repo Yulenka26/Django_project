@@ -24,14 +24,22 @@ def ping(request)-> dict[str, bool]:
 
 @router.get("/posts", response=list[PostOutSchema])
 async def posts_list(request, search: str | None=None, category_id: int | None=None) -> list[PostOutSchema]:
+    version = await cache.aget("posts_version", 1)
+    cache_key = f"api_posts_list_{search}_{category_id}_v{version}"
+    posts = await cache.aget(cache_key)
+
+    if posts is not None:
+        return posts
+
     qs = Post.objects.all()
     if search:
         qs = qs.filter(title__icontains=search)
 
     if category_id:
         qs = qs.filter(category=category_id)
-
-    return [post async for post in qs]
+    posts_list = [post async for post in qs]
+    await cache.aset(cache_key, posts_list, 60*5)
+    return posts_list
 
 @router.get("/posts/{post_id}", response=PostOutSchema)
 async def get_post(request, post_id:int) -> PostOutSchema | HttpResponse:

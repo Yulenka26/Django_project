@@ -31,7 +31,6 @@ class PostListView(ListView):
             return self.model.objects.filter(published=True)
 
 
-
 class PostDetailView(DetailView):
     model = Post
     template_name = "blog_app/post_detail.html"
