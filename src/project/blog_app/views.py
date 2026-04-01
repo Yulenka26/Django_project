@@ -1,13 +1,21 @@
+from django.shortcuts import get_object_or_404
 from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-from django.views.generic import TemplateView, ListView, DetailView, CreateView, UpdateView
-
-from project.blog_app.forms import PostForm, CategoryForm
-from project.blog_app.mixins import TitleMixin, StaffRequiredMixin
-from project.blog_app.models import Post, Category
-from django.shortcuts import get_object_or_404
+from django.views.generic import (
+    CreateView,
+    DetailView,
+    ListView,
+    TemplateView,
+    UpdateView,
+)
 from slugify import slugify
+
+from project.blog_app.forms import CategoryForm, PostForm
+from project.blog_app.mixins import StaffRequiredMixin, TitleMixin
+from project.blog_app.models import Category, Post
+from project.blog_app.tasks import increment_views_count
+
 
 class IndexView(TitleMixin, TemplateView):
     template_name = "blog_app/index.html"
@@ -15,8 +23,11 @@ class IndexView(TitleMixin, TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context["posts"] = Post.objects.filter(published=True).order_by("-created_at")[:5]
+        context["posts"] = Post.objects.filter(published=True).order_by("-created_at")[
+            :5
+        ]
         return context
+
 
 class PostListView(ListView):
     model = Post
@@ -36,9 +47,15 @@ class PostDetailView(DetailView):
     template_name = "blog_app/post_detail.html"
     context_object_name = "post"
 
-    @method_decorator(cache_page(60 * 5))
+    @method_decorator(cache_page(60 * 1))
     def dispatch(self, *args, **kwargs):
         return super().dispatch(*args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        response = super().get(request, *args, **kwargs)
+        increment_views_count.delay(post_id=self.object.id)
+        return response
+
 
 class CategoriesListView(ListView):
     model = Category
@@ -59,10 +76,10 @@ class CategoryDetailView(DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["posts"] = Post.objects.filter(
-            category=self.object,
-            published=True
+            category=self.object, published=True
         ).order_by("-created_at")
         return context
+
 
 class PostCreateView(StaffRequiredMixin, CreateView):
     model = Post
@@ -78,7 +95,6 @@ class PostCreateView(StaffRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-
 class CategoryCreateView(StaffRequiredMixin, CreateView):
     model = Category
     form_class = CategoryForm
@@ -87,6 +103,7 @@ class CategoryCreateView(StaffRequiredMixin, CreateView):
     def form_valid(self, form):
         form.instance.slug = slugify(form.cleaned_data["title"])
         return super().form_valid(form)
+
 
 class PostUpdateView(UpdateView):
     model = Post
@@ -100,6 +117,10 @@ class PostUpdateView(UpdateView):
 
     # Проверяем валидность
     def form_valid(self, form):
-        if self.object.title != form.cleaned_data["title"]: # сравниваем новое и старое название
-            form.instance.slug = slugify(form.cleaned_data["title"]) # если разные - меняем slug
+        if (
+            self.object.title != form.cleaned_data["title"]
+        ):  # сравниваем новое и старое название
+            form.instance.slug = slugify(
+                form.cleaned_data["title"]
+            )  # если разные - меняем slug
         return super().form_valid(form)

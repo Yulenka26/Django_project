@@ -113,3 +113,12 @@ compose_logs:
 
 compose_down: #останавливаем  docker compose, удаляем контейнеры
 	docker compose down
+
+check_celery:
+	uv run celery -A blog_project --workdir=src/project inspect registered
+
+run_celery:
+	uv run celery -A blog_project --workdir=src/project worker -l INFO --pool=solo
+
+celery_run_docker:
+	uv run celery -A blog_project --workdir=src/project worker -l INFO

@@ -10,7 +10,8 @@
     {% endif %}
     <p class="text-muted">
         Опубликовано: {{post.created_at|date:"d.m.Y H:i"}}<br>
-        Автор: {{post.author}}
+        Автор: {{post.author}}<br>
+        Количество просмотров: {{post.views_count}}
     </p>
     <hr>
     <div class="post-content">
