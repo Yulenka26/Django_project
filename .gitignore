@@ -11,3 +11,4 @@ Virtual environments
 .vscode
 .idea
 .env
+.env.docker
