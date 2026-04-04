@@ -14,3 +14,5 @@ COPY src/project/__init__.py ./src/project/
 RUN uv sync --frozen
 
 COPY . .
+
+ENV PYTHONPATH=/app/src/project

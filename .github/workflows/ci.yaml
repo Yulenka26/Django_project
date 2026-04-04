@@ -1,0 +1,51 @@
+name: lint and test project
+
+on:
+  push:
+    branches-ignore:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code # получаем весь код
+        uses: actions/checkout@v6
+
+      - name: setup uv # устанавливаем uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: 3.14
+          enable-cache: true
+
+      - name: install dependencies # устанавливаем библиотеки
+        run: uv sync --frozen
+
+      - name: run linters # запускаем проверку по всем файлам проекта
+        run: uv run pre-commit run --all-files
+
+  test:
+    needs: lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout code # получаем весь код
+        uses: actions/checkout@v6
+
+      - name: setup uv # устанавливаем uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: 3.14
+          enable-cache: true
+
+      - name: install dependencies # устанавливаем библиотеки
+        run: uv sync --frozen
+
+      - name: create .env # создаем env файл из шаблона
+        run: cp .env.example .env
+
+      - name: run tests
+        run: |
+          cd src/project
+          uv run manage.py test --verbosity=2
