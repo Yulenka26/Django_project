@@ -13,4 +13,4 @@ Virtual environments
 .env
 .git
 src/project/media
-static/
+static-files/
