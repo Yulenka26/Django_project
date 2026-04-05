@@ -29,6 +29,12 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
 
+    servises:
+      redis:
+        image: redis:alpine
+        ports:
+          - 6379:6379
+
     steps:
       - name: checkout code # получаем весь код
         uses: actions/checkout@v6
