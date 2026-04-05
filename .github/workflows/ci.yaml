@@ -29,7 +29,7 @@ jobs:
     needs: lint
     runs-on: ubuntu-latest
 
-    servises:
+    services:
       redis:
         image: redis:alpine
         ports:
