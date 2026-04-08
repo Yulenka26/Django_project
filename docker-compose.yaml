@@ -16,7 +16,7 @@ services:
   django:
     build: .
     container_name: blog
-    command: make run_all
+    command: make serv
     restart: unless-stopped
     volumes:
       - ./media:/app/src/project/media/
