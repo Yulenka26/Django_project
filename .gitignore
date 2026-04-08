@@ -12,4 +12,4 @@ Virtual environments
 .idea
 .env
 .env.docker
-static-files/
+static_files/
