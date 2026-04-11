@@ -88,8 +88,8 @@ jobs:
         with:
           push: true
           tags: ${{steps.meta.outputs.tags}}
-          lables: ${{steps.meta.outputs.lables}}
-          cache-from: registry,ref=ghcr.io/yulenka26/django_project:latest
+          labels: ${{steps.meta.outputs.labels}}
+          cache-from: type=registry,ref=ghcr.io/yulenka26/django_project:latest
           cache-to: type=inline
 
   deploy:
