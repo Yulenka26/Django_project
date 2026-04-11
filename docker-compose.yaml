@@ -14,7 +14,7 @@ services:
       retries: 3
 
   django:
-    build: .
+    image: ghcr.io/yulenka26/django_project:latest
     container_name: blog
     command: make serv
     restart: unless-stopped
@@ -35,7 +35,7 @@ services:
       retries: 3
 
   celery:
-    build: .
+    image: ghcr.io/yulenka26/django_project:latest
     container_name: blog_celery
     command: make celery_run_docker
     restart: unless-stopped
